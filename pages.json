@@ -1,0 +1,115 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页
+		
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "福鼎生活网",
+				"onReachBottomDistance":60,
+				"enablePullDownRefresh":true
+			}
+		},
+		{
+			"path":"pages/hello",
+			"style": {
+				"navigationBarTitleText": "hello uniApp",
+				"onReachBottomDistance":60,
+				"enablePullDownRefresh":true
+			}
+		},
+		{
+			"path":"pages/article/index"
+		},{
+			"path":"pages/article/list"
+		},{
+			"path":"pages/article/show"
+		},{
+			"path":"pages/login/index"
+		},
+		{
+			"path":"pages/login/findpwd"
+		},
+		{
+			"path":"pages/register/index"
+		},{
+			"path":"pages/user/index"
+		},
+		{"path":"pages/user/info"},
+		{"path":"pages/user/user_head"},
+		{"path":"pages/user/password"},
+		{"path":"pages/user/paypwd"},{
+			"path":"pages/notice/my"
+		},
+		{
+			"path":"pages/comment/my",
+			"style": {
+				"navigationBarTitleText": "我的评论",
+				"onReachBottomDistance":60,
+				"enablePullDownRefresh":true
+			}
+		},
+		{"path":"pages/coupon/my"},
+		{"path":"pages/fav/my"},
+		{"path":"pages/recharge/my"},
+		{"path":"pages/recharge/index"},
+		{"path":"pages/recharge/order"},
+		{"path":"pages/pay_log/my"},
+		{"path":"pages/user_address/my"},
+		{"path":"pages/user_address/add"},
+		{"path":"pages/user_address/edit"},
+		{"path":"pages/user_address/orderadd"},
+		
+		{"path":"pages/user/set","style":{"navigationBarTitleText":"用户设置"}},
+		{"path":"pages/kefu/index"},
+		{"path":"pages/bankcard/index"},
+		{"path":"pages/html/aboutus"},
+		{"path":"pages/web/index"}
+		
+		
+		
+	],
+	"subPackages":[
+		{
+			"root":"pagestaoke",
+			"pages":[
+				{"path":"taoke/index"},
+				{"path":"taoke/show"},
+				{"path":"taoke/list"},
+				{"path":"taoke/99"},
+				{"path":"taoke/hot"},
+				{"path":"taoke/tag"},
+				{"path":"taoke/search"},
+				{"path":"taoke_type/index","style":{
+					"navigationBarTitleText":"宝贝分类"
+				}},
+				{"path":"taoke_fav/index","style":{
+					"navigationBarTitleText":"我的收藏"
+				}},
+				{"path":"taoke_group_product/index"},
+				{"path":"taoke_shop/index","style":{
+					"navigationBarTitleText":"好店推荐"
+				}},
+				{"path":"taoke_user/index"} 
+			]
+		}
+	
+	],
+	"preloadRule":{
+		"pages/index/index":{
+			"network":"all",
+			"packages":["pageforum","pagefenlei","pageb2c","pageb2b","pages2c","pagef2c"]
+		}
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "福鼎生活网",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"permission":{
+		"scope.userLocation": {
+		  "desc": "你的位置信息将用于小程序位置接口的效果展示"
+		}
+	}
+	 
+}
