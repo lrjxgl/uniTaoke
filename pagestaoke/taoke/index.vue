@@ -4,11 +4,11 @@
 			<page-loading></page-loading>
 		</view>
 		<view v-if="pageLoad">
-		<div class="input-flex">
+		<view class="input-flex">
 			<image class="wh-36" :src="logo"></image>
 			<input type="text" v-model="keyword" class="input-flex-text" />
-			<div class="input-flex-btn" @click="search">搜一下</div>
-		</div>
+			<view class="input-flex-btn" @click="search">搜一下</view>
+		</view>
 		<view class="main-body">
 			<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
 				<swiper-item v-for="(item,key) in pageData.flashList" :key="key">

@@ -1,26 +1,26 @@
 <template>
-	<div>
-		<div class="footer-row"></div>
-		<div class="footer">
-			<div @click="goHome()"  v-bind:class="{'footer-active':tab=='home'}" class="footer-item icon-home">
+	<view>
+		<view class="footer-row"></view>
+		<view class="footer">
+			<view @click="goHome()"  v-bind:class="{'footer-active':tab=='home'}" class="footer-item icon-home">
 				 首页
 				 
-			</div>
-			<div @click="goNine()"  v-bind:class="{'footer-active':tab=='nine'}"  class="footer-item icon-goods">
+			</view>
+			<view @click="goNine()"  v-bind:class="{'footer-active':tab=='nine'}"  class="footer-item icon-goods">
 				9块9
-			</div> 
-			<div @click="goCategory()" v-bind:class="{'footer-active':tab=='category'}"  class="footer-item icon-cascades">
+			</view> 
+			<view @click="goCategory()" v-bind:class="{'footer-active':tab=='category'}"  class="footer-item icon-cascades">
 				分类
-			</div>
-		<div @click="goShop()"  v-bind:class="{'footer-active':tab=='shop'}"  class="footer-item icon-shop">
+			</view>
+		<view @click="goShop()"  v-bind:class="{'footer-active':tab=='shop'}"  class="footer-item icon-shop">
 			好店
-		</div>
-			<div @click="goUser()"  v-bind:class="{'footer-active':tab=='user'}" class="footer-item icon-my_light">
+		</view>
+			<view @click="goUser()"  v-bind:class="{'footer-active':tab=='user'}" class="footer-item icon-my_light">
 				 我的 
-			</div>
+			</view>
 		
-		</div>
-	</div>
+		</view>
+	</view>
 </template>
 
 <script>

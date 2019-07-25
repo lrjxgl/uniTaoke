@@ -1,27 +1,27 @@
 <template>
-	<div >
+	<view >
 		 
-		<div class="row-box">
-		<div class="d-title">{{title}}</div>
-		<div class="d-content">{{content}}</div>
-		</div>
-		<div class="bg-white">
-			<div v-if="num==1">1</div>
-			<div v-else-if="num==2">2</div>
-			<div v-else>其他数字</div>
-			<div :class="cls">这是红色字体哦</div>
-			<div :style="style">这是绑定style</div>
-			<div class="flex mgb-10">
-			<div class="btn mgr-10" @click="clickMe">点击事件</div>
-			<div class="btn" @click="clickMe('带参数的事件')">点击事件</div>
-			</div>
-			<div>
+		<view class="row-box">
+		<view class="d-title">{{title}}</view>
+		<view class="d-content">{{content}}</view>
+		</view>
+		<view class="bg-white">
+			<view v-if="num==1">1</view>
+			<view v-else-if="num==2">2</view>
+			<view v-else>其他数字</view>
+			<view :class="cls">这是红色字体哦</view>
+			<view :style="style">这是绑定style</view>
+			<view class="flex mgb-10">
+			<view class="btn mgr-10" @click="clickMe">点击事件</view>
+			<view class="btn" @click="clickMe('带参数的事件')">点击事件</view>
+			</view>
+			<view>
 				<input type="text" v-model="nickname" />
-				<div>这是input输入的值{{nickname}}</div>
-			</div>
-		<div class="row-item-text" v-for="(item,index) in list" :key="index">{{item}}</div>
-		</div>
-	</div>
+				<view>这是input输入的值{{nickname}}</view>
+			</view>
+		<view class="row-item-text" v-for="(item,index) in list" :key="index">{{item}}</view>
+		</view>
+	</view>
 </template>
 
 <script>

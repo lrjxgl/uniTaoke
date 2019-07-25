@@ -73,7 +73,9 @@
 			"root":"pagestaoke",
 			"pages":[
 				{"path":"taoke/index"},
-				{"path":"taoke/show"},
+				{"path":"taoke/show","style":{
+					"navigationBarTitleText":"宝贝详情"
+				}},
 				{"path":"taoke/list"},
 				{"path":"taoke/99"},
 				{"path":"taoke/hot"},
@@ -97,7 +99,7 @@
 	"preloadRule":{
 		"pages/index/index":{
 			"network":"all",
-			"packages":["pageforum","pagefenlei","pageb2c","pageb2b","pages2c","pagef2c"]
+			"packages":["pagestaoke"]
 		}
 	},
 	"globalStyle": {

@@ -1,12 +1,12 @@
 <template>
-	<div>
-	 	<div class="input-flex">
+	<view>
+	 	<view class="input-flex">
 	 		<image class="wh-36" src="../../static/logo.png"></image>
 	 		<input type="text" v-model="keyword" class="input-flex-text" />
-	 		<div class="input-flex-btn" @click="search">搜一下</div>
-	 	</div>
+	 		<view class="input-flex-btn" @click="search">搜一下</view>
+	 	</view>
 		<taoke-item :list="list"></taoke-item>
-	</div>
+	</view>
 </template>
 
 <script>

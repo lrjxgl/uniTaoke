@@ -1,9 +1,9 @@
 <template>
-	<div>
+	<view>
 	 	
 		<taoke-item :list="list"></taoke-item>
 		<mt-footer tab="nine"></mt-footer>
-	</div>
+	</view>
 </template>
 
 <script>

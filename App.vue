@@ -4,6 +4,7 @@
 			console.log('App Launch');
 			// #ifdef APP-PLUS
 			// 锁定屏幕方向
+			/*
 			setTimeout(function(){
 				plus.screen.lockOrientation('portrait-primary'); //锁定
 				console.log(plus.runtime.version);
@@ -51,7 +52,7 @@
 				}
 			});
 			},300)
-			
+			*/
 			// #endif
 		},
 		onShow: function () {
@@ -75,7 +76,7 @@
 <style>	
 @import "./common/iconfont.css";
 @import "./common/dt-ui-uni.css";
-@import "./common/forum.css";
+
 uni-input div{
 	width: 100%;
 }

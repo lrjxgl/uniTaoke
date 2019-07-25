@@ -1,8 +1,8 @@
 <template>
-	<div>
+	<view>
 	 	
 		<taoke-item :list="list"></taoke-item>
-	</div>
+	</view>
 </template>
 
 <script>

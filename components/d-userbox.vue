@@ -1,20 +1,20 @@
 <template>
-	<div>
-		<div v-if="muser" class="d-userbox">
+	<view>
+		<view v-if="muser" class="d-userbox">
 			<image class="d-userbox-head" :src="muser.user_head+'.100x100.jpg'"></image>
-			<div class="flex-1">
-				<div class="d-userbox-nick">{{muser.nickname}}</div>
-				<div class="d-userbox-follows flex-ai-center">
-					<div>粉丝</div>
+			<view class="flex-1">
+				<view class="d-userbox-nick">{{muser.nickname}}</view>
+				<view class="d-userbox-follows flex-ai-center">
+					<view>粉丝</view>
 					<text class="cl-num mgr-5 flex-center">{{muser.followed_num}}</text> 
-					<div>关注</div>
+					<view>关注</view>
 					<text class="cl-num flex-center">{{muser.follow_num}}</text>
-					<div class="cl3 f12  mgl-10" v-if="timeago">{{timeago}}</div>
-				</div>
-			</div>
-			<div class="btn-small btn-outline-success" @click="followToggle(muser.userid)">{{followStr}}</div>
-		</div>
-	</div>
+					<view class="cl3 f12  mgl-10" v-if="timeago">{{timeago}}</view>
+				</view>
+			</view>
+			<view class="btn-small btn-outline-success" @click="followToggle(muser.userid)">{{followStr}}</view>
+		</view>
+	</view>
 </template>
 
 <script>

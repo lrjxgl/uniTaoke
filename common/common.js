@@ -190,13 +190,13 @@ module.exports = {
 		html=html.replace(' class="brush:html;toolbar:false"'," ");
 		html=html.replace(/<pre /g,'<pre style="border:1px solid #eee;padding:10px;max-height:300px;overflow:auto;" ');
 		
-		html=html.replace(/<pre /g,"<div ");
-		html=html.replace("</pre>","</div>");
+		html=html.replace(/<pre /g,"<view ");
+		html=html.replace("</pre>","</view>");
 		html=html.replace(/\n/g,"<br />");
-		html=html.replace(/<iframe /,'<div style="display:none" ');
-		html=html.replace(/<\/iframe>/,'</div>');
-		html=html.replace("<section ","<div ");
-		html=html.replace("</section>","</div>");
+		html=html.replace(/<iframe /,'<view style="display:none" ');
+		html=html.replace(/<\/iframe>/,'</view>');
+		html=html.replace("<section ","<view ");
+		html=html.replace("</section>","</view>");
 		 
 		//console.log(html);
 		return html;

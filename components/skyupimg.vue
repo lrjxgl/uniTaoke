@@ -1,18 +1,18 @@
 <template>
-	<div>
-		<div class="upimg-box bg-fff">
-			<div @click="upload()" :class="{'none':dimgurl==''}" class="upimg-item">
+	<view>
+		<view class="upimg-box bg-fff">
+			<view @click="upload()" :class="{'none':dimgurl==''}" class="upimg-item">
 				<img class="upimg-img" v-if="dimgurl!=''" :src="dtrueimgurl+'.100x100.jpg'">
-			</div>
+			</view>
 			 
-			<div @click="upload()" v-if="dimgurl==''" class="upimg-btn">
-				<div class="upimg-btn-icon"></div>
-			</div>
+			<view @click="upload()" v-if="dimgurl==''" class="upimg-btn">
+				<view class="upimg-btn-icon"></view>
+			</view>
 			 
 			<input type="hidden" :name="field" :value="dimgurl" class="imgurl none" />
 			<input style="display: none;" type="file" name="upimg" id="upimg" />
-		</div>
-	</div>
+		</view>
+	</view>
 </template>
 
 <script>

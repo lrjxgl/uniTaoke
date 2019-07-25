@@ -46,16 +46,16 @@
 					</view>
 				</view>
 				 
-				<div v-for="(item,index) in pageData.navList" :key="index">
-					<div class="m-navPic mgb-5">
+				<view v-for="(item,index) in pageData.navList" :key="index">
+					<view class="m-navPic mgb-5">
 						 
 						<navigator v-for="(cc,ccindex) in item.child" :url="cc.link_url" :key="ccindex" class="m-navPic-item">
-							<div class="m-navPic-icon" v-bind:class="cc.icon"></div>
-							<div class="m-navPic-title">{{cc.title}}</div>
+							<view class="m-navPic-icon" v-bind:class="cc.icon"></view>
+							<view class="m-navPic-title">{{cc.title}}</view>
 						</navigator>
 						 
-					</div>
-				</div>	
+					</view>
+				</view>	
 				 
 
 
@@ -63,10 +63,10 @@
 			 
 		</view>
 		<view v-else class="bg-fff pd-10">
-				<div class="flex flex-center mgb-10 cl2">您还未登录,请先登录</div>
-				<div class="flex flex-center">
+				<view class="flex flex-center mgb-10 cl2">您还未登录,请先登录</view>
+				<view class="flex flex-center">
 					<navigator  class="btn-small" url="../login/index">前往登录</navigator>
-				</div>
+				</view>
 			
 		</view>
 		<mt-footer tab="user"></mt-footer>

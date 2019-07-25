@@ -1,12 +1,12 @@
 <template>
-	<div>
-		<div class="taoke-tags">
+	<view>
+		<view class="taoke-tags">
 			 
 			<a v-for="(item,index) in taoke_tags" :key="index" @click="setTag(item.name)" :class="item.name==tagname?'taoke-tags-active':''" class="taoke-tags-item" >{{item.name}}</a>
 			
-		</div>	
+		</view>	
 		<taoke-item :list="list"></taoke-item>
-	</div>
+	</view>
 </template>
 
 <script>

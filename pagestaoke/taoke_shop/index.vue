@@ -1,20 +1,20 @@
 <template>
-	<div>
-		<div class="flexlist">
+	<view>
+		<view class="flexlist">
 
-			<div @click="goWeb(item.linkurl)" v-for="(item,index) in list" :key="index" class="flexlist-item">
+			<view @click="goWeb(item.linkurl)" v-for="(item,index) in list" :key="index" class="flexlist-item">
 				<img class="flexlist-img" :src="item.imgurl+'.100x100.jpg'" />
-				<div class="flex-1">
-					<div class="flexlist-title">{{item.title}}</div>
-					<div class="flexlist-desc">{{item.description}}</div>
-				</div>
+				<view class="flex-1">
+					<view class="flexlist-title">{{item.title}}</view>
+					<view class="flexlist-desc">{{item.description}}</view>
+				</view>
 
-			</div>
+			</view>
 
-			<div class="clearfix"></div>
-		</div>
+			<view class="clearfix"></view>
+		</view>
 		<mt-footer tab="shop"></mt-footer>
-	</div>
+	</view>
 </template>
 
 <script>

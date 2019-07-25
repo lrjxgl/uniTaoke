@@ -1,11 +1,11 @@
 <template>
 	<view class="loginBg">
-		<div class="h30"></div>
-		<div class="flex-center ">
-			<div @click="goHome()" class="flex-center">
+		<view class="h30"></view>
+		<view class="flex-center ">
+			<view @click="goHome()" class="flex-center">
 				<image src="https://www.fd175.com/static/logo.png" class="wh-60"></image>
-			</div>
-		</div>
+			</view>
+		</view>
 		<form class="loginBox"    autocomplete="off" id="login-form" @submit="formSubmit" >
 			<view class="flexIcon">
       	<view class="flexIcon-icon iconfont icon-phone_light"></view>
@@ -15,31 +15,31 @@
       	<view class="flexIcon-icon iconfont icon-password"></view>
         <input type="password"  placeholder-class="cl-white" class="flexIcon-text" name="b"  autocomplete="off"  v-model="password" placeholder="请输入登录密码" />
       </view>
-			<div></div>
+			<view></view>
       <button type="primary" formType="submit"  class="btn-row-submit">登陆</button>
-			<div class="flex mgb-20">
+			<view class="flex mgb-20">
 					<navigator class="cl-white pointer flex-1" url="../register/index" >注册</navigator>
 					<navigator class="cl-white pointer" url="../login/findpwd" >忘记密码</navigator>
-			</div>
+			</view>
 			
 			<!-- #ifdef MP-WEIXIN -->
-			<div class="otherBox mgb-20">
-				<div class="otherBox-line"></div>
-				<div class="otherBox-text">其它方式登录</div>
-			</div>
-			<div class="flex flex-center">
+			<view class="otherBox mgb-20">
+				<view class="otherBox-line"></view>
+				<view class="otherBox-text">其它方式登录</view>
+			</view>
+			<view class="flex flex-center">
 				<button open-type="getUserInfo" @getuserinfo="wxLogin" class="btn-round bg-success icon-weixin"></button>
-			</div>
+			</view>
 			<!-- #endif -->
 			
 			<!-- #ifdef H5 -->
-			<div class="otherBox mgb-20" v-if="isWeixin">
-				<div class="otherBox-line"></div>
-				<div class="otherBox-text">其它方式登录</div>
-			</div>
-			<div class="flex flex-center" v-if="isWeixin">
-				<div @click="goWeixin()" class="btn-round bg-success icon-weixin"></div>
-			</div>
+			<view class="otherBox mgb-20" v-if="isWeixin">
+				<view class="otherBox-line"></view>
+				<view class="otherBox-text">其它方式登录</view>
+			</view>
+			<view class="flex flex-center" v-if="isWeixin">
+				<view @click="goWeixin()" class="btn-round bg-success icon-weixin"></view>
+			</view>
 			<!-- #endif -->
     </form>
 	</view>

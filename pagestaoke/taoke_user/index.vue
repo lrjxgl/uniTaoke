@@ -28,23 +28,23 @@
 					</view>
 					<navigator url="../../pages/user/set" class="flex-center btn-small btn-link iconfont icon-settings"></navigator>
 				</view>
-				<div class="row-box">
- 				<div  @click="gourl('../../pagestaoke/taoke_fav/index')" class="row-item">
-					<div class="row-item-icon icon-favor"></div>
-					<div class="row-item-title">
+				<view class="row-box">
+ 				<view  @click="gourl('../../pagestaoke/taoke_fav/index')" class="row-item">
+					<view class="row-item-icon icon-favor"></view>
+					<view class="row-item-title">
 						我的收藏
-					</div>
-				</div>
-				<div @click="gourl('../../pages/notice/my')" class="row-item">
-					<div class="row-item-icon icon-notice"></div>
-					<div class="row-item-title">
+					</view>
+				</view>
+				<view @click="gourl('../../pages/notice/my')" class="row-item">
+					<view class="row-item-icon icon-notice"></view>
+					<view class="row-item-title">
 						我的消息
-					</div>
-				</div>
+					</view>
+				</view>
 				 
 				
 				 
-			</div> 
+			</view> 
 				 
 
 
@@ -52,10 +52,10 @@
 			 
 		</view>
 		<view v-else class="bg-fff pd-10">
-				<div class="flex flex-center mgb-10 cl2">您还未登录,请先登录</div>
-				<div class="flex flex-center">
+				<view class="flex flex-center mgb-10 cl2">您还未登录,请先登录</view>
+				<view class="flex flex-center">
 					<navigator  class="btn-small" url="../login/index">前往登录</navigator>
-				</div>
+				</view>
 			
 		</view>
 		<mt-footer tab="user"></mt-footer>

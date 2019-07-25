@@ -1,38 +1,3 @@
-<template>
-	<view class="tk-list">
-		<view @click="goShow(item.id)" v-for="(item,index) in list" :key="index" class="tk-item" >
-			<view class="tk-item-img-box">
-				<img class="tk-item-img" :src="item.imgurl" />
-				<view class="tk-juan-price">券￥{{item.juan_money}}</view>
-			</view>
-			<view class="tk-title">{{item.title}}</view>
-			<view class="tk-row-price">
-				<text class="tk-price">￥{{item.price}}(券后)</text>
-				<text class="tk-sold">销量{{item.sold_num}}</text>
-			</view>
-		</view>
-	</view>
-</template>
-
-<script>
-	export default{
-		name:"taoke-item",
-		props:{
-			list:{}
-		},
-		created:function(){
-		},
-		methods:{
-			goShow:function(id){
-				uni.navigateTo({
-					url:"../../pagestaoke/taoke/show?id="+id
-				})
-			}
-		}
-	}
-</script>
-
-<style>
 .tk-list{
 	display: flex;
 	flex-direction: row;
@@ -89,10 +54,10 @@
 .tk-price{
 	color: #ff4d36;
 	flex:1;
+	font-size: 12px;
 }
 .tk-sold{
+	float: right;
 	padding-right: 5px;
 	font-size: 12px;
-	text-align: right;
 }
-</style>

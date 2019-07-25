@@ -1,76 +1,93 @@
 <template>
-	<div>
-		<div style="position: absolute; right: 10px; top: 10px;">
-			<div class="fav-btn js-fav-toggle" :class="{'btn-fav-active':isFav}" tablename="mod_taoke" :objectid="data.id"></div>
-		</div>
-		<img class="d-img" :src="data.imgurl" />
-		<div class="row-box">
+	<view>
+		<view style="position: absolute; right: 10px; top: 10px;">
+			<view @click="favToggle" class="fav-btn" :class="{'fav-btn-active':isFav}" ></view>
+		</view>
+		<image class="d-img" :src="data.imgurl" mode="widthFix"></image>
+		<view class="row-box">
 
 
-			<div class="d-title">
+			<view class="d-title">
 				{{data.title}}
-			</div>
-			<div class="d-desc">
+			</view>
+			<view class="d-desc">
 				{{data.description}}
 
-			</div>
-			<div class="flex">
+			</view>
+			<view class="flex">
 				<span class="cl-money">券后价：￥{{data.price}}</span>
 				<span class="flex-1 text-center">销量 {{data.sold_num}}</span>
-				<div class="juan-price flex">
+				<view class="juan-price flex">
 					<span class="juan-price-q">券</span>
 					<span class="juan-price-m">￥{{data.juan_money}}</span>
-				</div>
-			</div>
+				</view>
+			</view>
 
 
 
 			<a href="javascript:;" id="js-detail" class="look-text">查看图文详情</a>
-			<div class="p-detail">
+			<view class="p-detail">
 				{{data.content}}
-			</div>
+			</view>
 
-			<div class="fine_out">
-				<div class="fine">
+			<view class="fine_out">
+				<view class="fine">
 					<span class="fine_in"><span>精品</span>推荐</span>
-				</div>
-			</div>
-			<taoke-item :list="reclist"></taoke-item>
+				</view>
+			</view>
+			 
+			<view class="tk-list">
+				<view @click="setPage(item.id)" v-for="(item,index) in reclist" :key="index" class="tk-item" >
+					<view class="tk-item-img-box">
+						<img class="tk-item-img" :src="item.imgurl" />
+						<view class="tk-juan-price">券￥{{item.juan_money}}</view>
+					</view>
+					<view class="tk-title">{{item.title}}</view>
+					<view class="tk-row-price">
+						<span class="tk-price">￥{{item.price}}(券后)</span>
+						<span class="tk-sold">销量{{item.sold_num}}</span>
+					</view>
+				</view>
+			</view>
 
-
-		</div>
-		<div style="height: 60px;"></div>
-		<div class="bfooter">
-			<div class="flex-1 flex">券后价<span class="cl-money f12">{{data.price}}</span></div>
-			<div class="bfooter-yq flex">优惠：<span class="cl-money f12">￥{{data.juan_money}}</span> </div>
-			<div class="bfooter-pwd  f12" @click="fixboxClass='flex-col'">口令购买</div>
+		</view>
+		<view style="height: 60px;"></view>
+		<view class="bfooter">
+			<view class="flex-1 flex">券后价<span class="cl-money f12">{{data.price}}</span></view>
+			<view class="bfooter-yq flex">优惠：<span class="cl-money f12">￥{{data.juan_money}}</span> </view>
+			<view class="bfooter-pwd  f12" @click="fixboxClass='flex-col'">口令购买</view>
 			<!-- #ifdef H5 -->
 			<a target="_blank" :href="lqUrl"  class="bfooter-lq  f12">立即领券</a>
 			<!-- #endif --> 
 			
 			 
-		</div>
+		</view>
 
-		<div id="fixbox" :class="fixboxClass" class="fixbox">
+		<view id="fixbox" :class="fixboxClass" class="fixbox">
 
-			<div class="hd">淘口令购买
-				<div @click="fixboxClass=''" class="f_close fixbox-close iconfont icon-close"></div>
-			</div>
-			<div class="box">
-				<div class="tit">{{data.title}}</div>
-				<div class="flex">券后价：<span class="cl-money">￥{{data.price}}</span></div>
-				<div>复制这条信息</div>
+			<view class="hd">淘口令购买
+				<view @click="fixboxClass=''" class="f_close fixbox-close iconfont icon-close"></view>
+			</view>
+			<view class="box">
+				<view class="tit">{{data.title}}</view>
+				<view class="flex">券后价：<span class="cl-money">￥{{data.price}}</span></view>
+				<view>复制这条信息</view>
 				<span style="-webkit-user-select:text" class="num " >{{data.juan_pwd}}</span>
-				<div class="flex">打开<span class="num">[手机淘宝]</span>即可领取优惠券购买</div>
-			</div>
-			<p class="copytext" style="margin:0 auto!important" @click="copy(data.juan_pwd)">一键复制</p>
-			<p class="desc">由于部分浏览器不支持一键复制，<br>若一键复制失败，请长按文字手动复制</p>
-		</div>
-	</div>
+				<view class="flex f12">打开<span class="num f12">[手机淘宝]</span>即可领取优惠券购买</view>
+			</view>
+			<view class="copytext" style="margin:0 auto!important" @click="copy(data.juan_pwd)">一键复制</view>
+			<view class="desc">由于部分浏览器不支持一键复制，<br>若一键复制失败，请长按文字手动复制</view>
+		</view>
+	</view>
 </template>
 
 <script>
-	
+	// #ifdef H5
+	import Vue from 'vue' 
+	import VueClipboard from  "../../common/vue-clipboard-cli.js";
+	VueClipboard.config.autoSetContainer = true
+	Vue.use(VueClipboard);
+	// #endif 
 	import taokeItem from "../../components/taoke-item.vue";
 	export default {
 		components: {
@@ -92,6 +109,37 @@
 			this.getPage();
 		},
 		methods: {
+			setPage:function(id){
+				this.id = id;
+				this.getPage();
+				uni.pageScrollTo({
+					scrollTop:0
+				})
+			},
+			favToggle:function(){
+				var that=this;
+				that.app.get({
+					url:that.app.apiHost+"/index.php?m=fav&a=toggle&ajax=1",
+					data:{
+						tablename:"mod_taoke",
+						objectid:that.id
+					},
+					success:function(res){
+						if(res.error){
+							uni.showToast({
+								title:res.message
+							})
+							return false;
+						}
+						if(res.data=='add'){
+							that.isFav=true;
+							 
+						}else{
+							that.isFav=false;
+						}
+					}
+				})
+			},
 			getPage: function() {
 				var that = this;
 				that.app.get({
@@ -99,7 +147,7 @@
 					success: function(res) {
 						that.data = res.data.data;
 						that.reclist = res.data.reclist;
-						that.isFav = res.data.isFav;
+						that.isFav = res.data.isfav;
 						if(res.data.data.juan_url){
 							that.lqUrl=res.data.data.juan_url;
 						}else{
@@ -158,6 +206,7 @@
 </script>
 
 <style>
+	@import url("../../common/taoke.css");
 	.fav-btn {
 		width: 36px;
 		height: 36px;

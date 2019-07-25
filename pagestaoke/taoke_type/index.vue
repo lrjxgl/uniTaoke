@@ -1,17 +1,17 @@
 <template>
-	<div>
-		<div class="list">
+	<view>
+		<view class="list">
 
-			<a @click="goList(item.catid)" v-for="(item,index) in typeList" :key="index" class="list-item">
-				<img class="list-item-img" :src="item.imgurl+'.100x100.jpg'" width="60" />
+			<view @click="goList(item.catid)" v-for="(item,index) in typeList" :key="index" class="list-item">
+				<image mode="widthFix" class="list-item-img" :src="item.imgurl+'.100x100.jpg'"  ></image>
 
-				<div>{{item.title}}</div>
-			</a>
+				<view class="f14">{{item.title}}</view>
+			</view>
 
-			<div class="clearfix"></div>
-		</div>
+			<view class="clearfix"></view>
+		</view>
 		<mt-footer tab="category"></mt-footer>
-	</div>
+	</view>
 </template>
 
 <script>
@@ -68,6 +68,7 @@
 		color: #444;
 		border: 1px solid #eee;
 		box-sizing: border-box;
+		
 	}
 
 	.list-item:hover {
@@ -76,6 +77,9 @@
 
 	.list-item-img {
 		border-radius: 50%;
+		
+		width: 60px;
+		margin: 0 auto;
 		margin-bottom: 3px;
 	}
 </style>
